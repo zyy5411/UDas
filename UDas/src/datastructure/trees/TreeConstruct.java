@@ -1,10 +1,15 @@
 package datastructure.trees;
 
-class StringReader {
+/**
+ * use for tree's construct.
+	data's format is like: "1(2(4,5(7,)),3(,6))"
+ * @author zyy
+ */
+class TreeConstruct {
 	String data;
 	int index;
 
-	public StringReader(String data) {
+	public TreeConstruct(String data) {
 		this.data = data;
 		index = 0;
 	}

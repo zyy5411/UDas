@@ -8,11 +8,10 @@ public class TreeNode {
 	public TreeNode parent;
 
 	/**
-	 * "1(2(4,5(7,)),3(,6))"
 	 * @param sr
 	 * @param parent
 	 */
-	public TreeNode(StringReader sr, TreeNode parent) {
+	public TreeNode(TreeConstruct sr, TreeNode parent) {
 		if (sr.hasNext()) {
 			try {
 				if (!sr.hasNext() || !isNumber(sr.peepNextChar().charAt(0))) {
@@ -59,8 +58,20 @@ public class TreeNode {
 			right.printByMidOrder();
 	}
 
-	public static void main(String[] args) {
+	public void printByPreOrder() {
+		System.out.print(data + "  ");
+		if (left != null)
+			left.printByMidOrder();
+		if (right != null)
+			right.printByMidOrder();
+	}
 
+	public void printByPostOrder() {
+		if (left != null)
+			left.printByMidOrder();
+		if (right != null)
+			right.printByMidOrder();
+		System.out.print(data + "  ");
 	}
 
 }
